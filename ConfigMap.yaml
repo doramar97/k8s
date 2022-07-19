@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dorconfig
+data:
+  # property-like keys; each key maps to a simple value
+  dor_age: "25"
+  city: "Tel Aviv"
+

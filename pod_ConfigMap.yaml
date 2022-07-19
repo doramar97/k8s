@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: configmap-demo-pod
+spec:
+  containers:
+    - name: demo
+      image: alpine
+      env:
+        # Define the environment variable
+        - name: DOR_AGE # Notice that the case is different here                           # from the key name in the ConfigMap.
+          valueFrom:
+            configMapKeyRef:
+              name: dorconfig          # The ConfigMap this value comes from.
+              key: dor_age             # The key to fetch.
+        - name: DOR_CITY
+          valueFrom:
+            configMapKeyRef:
+              name: dorconfig
+              key: city
