@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-labels
+  labels:
+    name: nginx
+    tier: frontend
+    env: dev 
+spec:
+  containers:
+    - name: nginx-labels
+      image: nginx
+      ports:
+        - name: web
+          containerPort: 80
+          protocol: TCP
